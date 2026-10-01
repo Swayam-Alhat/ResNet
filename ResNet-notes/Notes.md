@@ -1,5 +1,8 @@
 # Resnet explained
 
+> [!Note]
+> Read Notes, paper (highlighted content) and watch Yann clitcher downloaded YT video. Do this multiple times and you will get it
+
 As number of layers increases, neural networks become difficult to train.
 
 Vanishing/exploding gradient was a problem but it was solved by normalized initialization & batch normalization layers
@@ -188,7 +191,23 @@ Resnet architecture works well when layers need to learn and perform identity ma
 
 But what if optimal function for layers is not identity. Meaning, layers need to learn and perform another function than identity (maybe near identity or non-identity).
 
-Even in this case, ResNet works well.
+Even in this case, ResNet works well.  
+
+**from paper**
+```
+In real cases, it is unlikely that identity mappings are op
+timal, but our reformulation may help to precondition the
+problem. If the optimal function is closer to an identity
+mapping than to a zero mapping, it should be easier for the
+solver to find the perturbations (weights) with reference to an identity
+mapping, than to learn the function as a new one. We show
+by experiments (Fig. 7) that the learned residual functions in
+general have small responses, suggesting that identity map
+pings provide reasonable preconditioning.
+
+This says, In real cases, identity is not optimal. So, If neural network have near identity or non-identity as optimal function, then also our reformulation (having skip connection to perform identity mapping) helps. In such case, optimizer starts with input x or near x (if F(x) has some value), and climbs for weights that produce optimal F(x). and This optimal F(x) will produce optimal H(x). This says that it is easier to find weights with the reference to x then to find weights for H(x) from scratch (with no reference).  
+They showed with the help of expirements that this learned F(x) (optimal F(x)) have smaller values / responses (meaning, original x and H(x) have very small difference i.e optimal H(x) is close to original input x). The small responses are evidence that the optimal H is close to identity, which is why starting there helps.
+```
 
 ResNet performs identity through skip connection. Input passes as it is to output end. layers learn F(x) (deviation needed in x) and added into x to get optimal H(x)
 
