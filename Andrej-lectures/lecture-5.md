@@ -8,3 +8,6 @@
 - perform expirements for choosing better hyperparameter. Also do cross validation test
 - Plot accuracy while training and testing. Because accuracy is interpretable. meaning, if accuracy for training is high but for testing is low, then its overfitting
 - Track ratio of weights (magnitude) and update weights as per the ratio of magnitude. Meaning, initial weight magnitude should be appropriate with its update ratio
+
+> [!Important]
+> Sigmoid and Tanh produce tiny grads at their extreme input values. So, it leads to vanishing gradient problem. ReLU is best option. Its compute is easy. It does not have extreme values. It only has problem of dead relu neuron which occurs rarely. Batch Norm also exist to solve distribution problem which relu cannot solve. Distribution problem means due to weight update and calculations, outputs of layers which acts inputs to next layer have different distribution. 
