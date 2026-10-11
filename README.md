@@ -4,3 +4,4 @@ This repo contains ResNet explaination, some important notes while learning ResN
 - `Andej-lectures` contains tips/tricks to train neural networks and CNNs
 - `loss-landscape` contains explaination about loss landscape
 - `ResNet-notes` contains simple explaination about ResNet
+- `batch-norm` contains explaination about internal covariate shift
