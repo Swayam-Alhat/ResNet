@@ -42,4 +42,6 @@ Batch normalization is a technique that normalizes the inputs of each layer in a
 
 **How Batch Normalization Helps Mitigate Internal Covariant Shift**
 
-Batch normalization stabilizes the learning process by reducing the internal covariant shift. By maintaining consistent distributions of activations across layers, it enables faster convergence and allows the use of higher learning rates. This normalization ensures that each layer receives inputs that are more predictable, making it easier for the model to learn effectively.
+Batch normalization stabilizes the learning process by reducing the internal covariant shift. By maintaining consistent distributions of activations across layers, it enables faster convergence and allows the use of higher learning rates. This normalization ensures that each layer receives inputs that are more predictable, making it easier for the model to learn effectively.  
+  
+Geeksforgeeks - [batch-norm](https://www.geeksforgeeks.org/computer-vision/what-is-batch-normalization-in-cnn/)
